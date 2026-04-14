@@ -1,203 +1,390 @@
-@charset "UTF-8";
-/*!
-* Start Bootstrap - Modern Business v5.0.7 (https://startbootstrap.com/template-overviews/modern-business)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-modern-business/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chirag Dodiya — Senior Software Engineer</title>
 
-/* ************************************
-   Theme layer for Chirag Dodiya
-   Senior Software Engineer personal site
-   Additive styles preserving Bootstrap defaults
-************************************* */
-:root {
-  /* Accessible light theme variables */
-  --cd-primary: #1E40AF; /* deep indigo */
-  --cd-primary-600: #1D4ED8; /* hover */
-  --cd-accent: #F59E0B; /* warm accent */
-  --cd-bg: #FFFFFF;
-  --cd-text: #0F172A; /* slate-900 */
-  --cd-muted: #475569; /* slate-600 */
-  --cd-border: #E2E8F0; /* slate-200 */
-}
+  <!-- Bootstrap CSS (keeps variables and utility classes available) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-cu5jQxk4x6bzI9g5b2n2wHqGQ5r8j2sF5QKq1dQ0A6j0a8a4r5m1f2g7u9v3t6s" crossorigin="anonymous">
 
-/* Buttons using Chirag's color variables */
-.btn-primary {
-  background-color: var(--cd-primary);
-  border-color: var(--cd-primary);
-  color: #fff; /* Ensure sufficient contrast */
-}
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--cd-primary-600);
-  border-color: var(--cd-primary-600);
-  color: #fff;
-  outline: 2px solid var(--cd-accent);
-  outline-offset: 2px;
-}
-.btn-primary:focus-visible {
-  outline: 2px solid var(--cd-accent);
-  outline-offset: 2px;
-}
+  <!-- Project stylesheet (preserve and reuse existing styles) -->
+  <link rel="stylesheet" href="css/styles.css">
 
-.btn-outline-primary {
-  color: var(--cd-primary);
-  border-color: var(--cd-primary);
-}
-.btn-outline-primary:hover {
-  background-color: var(--cd-primary);
-  color: #fff;
-}
-.btn-outline-primary:focus,
-.btn-outline-primary:focus-visible {
-  outline: 2px solid var(--cd-accent);
-  outline-offset: 2px;
-}
+  <!-- Small inline page-specific styles to complement the existing stylesheet -->
+  <style>
+    /* Ensure a polished, consistent typographic baseline for the page */
+    :root {
+      --page-max-width: 1100px;
+    }
 
-/* Sections vertical rhythm */
-section {
-  padding: 3rem 0;
-}
-@media (min-width: 992px) {
-  section {
-    padding: 4.5rem 0;
-  }
-}
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background-color: var(--cd-bg, #fff);
+      color: var(--cd-text, #0f172a);
+    }
 
-/* Hero enhancements */
-.hero {
-  background: linear-gradient(180deg, rgba(30,64,175,0.06), rgba(14,165,233,0.06));
-  border-bottom: 1px solid var(--cd-border);
-}
-.hero .display-4,
-.hero h1 {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-.hero .lead {
-  color: var(--cd-muted);
-}
+    header .navbar-brand {
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--cd-primary) !important;
+    }
 
-/* Skill badges */
-.badge-skill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--cd-border);
-  border-radius: 999px;
-  background-color: #F1F5F9;
-  color: var(--cd-text);
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin: 0.25rem;
-  white-space: nowrap;
-}
-.badge-skill .dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 999px;
-  background-color: var(--cd-primary);
-  display: inline-block;
-}
+    /* Improve hero container layout */
+    .hero {
+      padding: 4rem 0;
+    }
 
-/* Project cards */
-.project-card.card {
-  border: 1px solid var(--cd-border);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.project-card.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.08);
-}
-.project-card .card-title {
-  font-weight: 700;
-}
-.project-card .tech {
-  color: var(--cd-muted);
-  font-size: 0.9rem;
-}
+    .hero .lead {
+      font-size: 1.125rem;
+      max-width: 60ch;
+    }
 
-/* Section headings utility */
-.section-heading {
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  margin-bottom: 1rem;
-}
-.section-subtitle {
-  color: var(--cd-muted);
-  margin-bottom: 2rem;
-}
+    /* Project card image area */
+    .project-card .card-img-top {
+      height: 10rem;
+      object-fit: cover;
+      border-bottom: 1px solid var(--cd-border);
+    }
 
-/* Footer small text and links */
-footer .text-muted {
-  color: var(--cd-muted) !important;
-}
-footer a {
-  color: var(--cd-primary);
-}
+    /* Responsive project grid spacing */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1200px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-/* Accessibility: keep focus-visible outlines for interactive elements */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--cd-accent);
-  outline-offset: 2px;
-}
+    /* Simple utility for small muted meta */
+    .meta-muted {
+      color: var(--cd-muted);
+      font-size: 0.9rem;
+    }
 
-/* Preserve existing styles and structure below */
+    /* Footer layout */
+    footer {
+      background-color: #fbfdff;
+      border-top: 1px solid var(--cd-border);
+      padding: 2rem 0;
+    }
 
-/* ... rest of existing styles unchanged ... */
+    /* Visually hidden label helper */
+    .visually-hidden { 
+      position: absolute !important; 
+      height: 1px; width: 1px; 
+      overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky-top bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg container" aria-label="Main navigation">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" class="me-2" aria-hidden="true">
+          <rect width="24" height="24" rx="6" fill="var(--cd-primary)"></rect>
+          <path d="M7 12h10" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        Chirag Dodiya
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary" href="#contact">Hire me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container" style="max-width: var(--page-max-width);">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h1 class="display-4">Building resilient, user-centered products — fast.</h1>
+            <p class="lead mt-3">I'm Chirag, a Senior Software Engineer specializing in building scalable web platforms, delightful developer experiences, and high-quality engineering teams. I ship production-ready systems and mentor engineers to do the same.</p>
+            <div class="d-flex gap-2 mt-4">
+              <a class="btn btn-primary btn-lg" href="#projects">View projects</a>
+              <a class="btn btn-outline-primary btn-lg" href="#contact">Let's talk</a>
+            </div>
 
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
+            <div class="mt-4">
+              <div class="section-subtitle mb-2">Core skills</div>
+              <div>
+                <span class="badge-skill"><span class="dot"></span>TypeScript</span>
+                <span class="badge-skill"><span class="dot"></span>React</span>
+                <span class="badge-skill"><span class="dot"></span>Node.js</span>
+                <span class="badge-skill"><span class="dot"></span>Cloud / Infra</span>
+                <span class="badge-skill"><span class="dot"></span>Architecture</span>
+              </div>
+            </div>
+          </div>
 
-body {
-  margin: 0;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
-  font-weight: var(--bs-body-font-weight);
-  line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
-  text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title mb-2">Selected highlights</h5>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><strong>Scalable payments</strong> — Designed a payments platform processing millions of transactions monthly.</li>
+                  <li class="mb-2"><strong>Observability</strong> — Implemented tracing + metrics for reliable incident response.</li>
+                  <li><strong>Team growth</strong> — Hired and mentored teams from 2 → 12 engineers.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* ... (rest of the untouched Bootstrap and original styles) ... */
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container" style="max-width: var(--page-max-width);">
+        <div class="row align-items-center g-4">
+          <div class="col-md-6">
+            <h2 class="section-heading">About me</h2>
+            <p class="section-subtitle">I design and build performant, maintainable systems with a human-first approach. I enjoy mentoring engineers, improving developer experience, and shipping features that move the business forward.</p>
+            <p class="mb-0">I work across the stack, with a strong emphasis on backend architecture, API design, and frontend UX. When not coding, I write about engineering best practices and speak at conferences.</p>
+            <div class="mt-3">
+              <a class="btn btn-primary me-2" href="#projects">See work</a>
+              <a class="btn btn-outline-primary" href="#contact">Get in touch</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card project-card p-3">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="feature bg-light text-primary rounded d-inline-flex align-items-center justify-content-center" aria-hidden="true">⚙️</div>
+                <div>
+                  <h5 class="card-title mb-1">Engineering leadership</h5>
+                  <p class="mb-0">I partner with product and business stakeholders to prioritize outcomes and coach teams to deliver reliable software on schedule.</p>
+                  <div class="meta-muted mt-2">Hiring, mentorship, architecture reviews</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 card project-card p-3">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="feature bg-light text-primary rounded d-inline-flex align-items-center justify-content-center" aria-hidden="true">🚀</div>
+                <div>
+                  <h5 class="card-title mb-1">Performance & reliability</h5>
+                  <p class="mb-0">Focus on observability, caching, and cost-effective scaling to keep systems performant under load.</p>
+                  <div class="meta-muted mt-2">SLA design, tracing, autoscaling</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </section>
 
-.feature {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  width: 3rem;
-  font-size: 1.5rem;
-}
+    <!-- Projects -->
+    <section id="projects" class="py-5 bg-white">
+      <div class="container" style="max-width: var(--page-max-width);">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="section-heading mb-0">Selected projects</h2>
+            <div class="section-subtitle">Hands-on work across product, infra, and platform engineering.</div>
+          </div>
+        </div>
 
-.bg-featured-blog {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 15rem;
-}
+        <div class="projects-grid">
+          <article class="card project-card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1526378721393-8f1f66c1f6fb?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8c4b6f3c8e8d3a6b2f5b7e9c3a1f4d2b" alt="Payments platform dashboard">
+            <div class="card-body">
+              <h5 class="card-title">Payments Platform</h5>
+              <p class="card-text">Built a resilient payments pipeline with idempotent processing and reconciliation across multiple providers.</p>
+              <div class="tech meta-muted">TypeScript · Node.js · Postgres · Kubernetes</div>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <small class="meta-muted">2024</small>
+              <a class="btn btn-sm btn-outline-primary" href="#" aria-label="Read more about Payments Platform">Details</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1537432376769-00a8b3d9e9b9?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a4e1f8579dabfa7c2e8f01f4f5e6b7c" alt="Developer platform screenshot">
+            <div class="card-body">
+              <h5 class="card-title">Developer Platform</h5>
+              <p class="card-text">Internal platform that reduced service onboarding time by 60% through automation and templates.</p>
+              <div class="tech meta-muted">Go · Kubernetes · CI/CD · Terraform</div>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <small class="meta-muted">2023</small>
+              <a class="btn btn-sm btn-outline-primary" href="#" aria-label="Read more about Developer Platform">Details</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3e1e99ddf8c6b6cf9cde8f6a3f5a8e0d" alt="Realtime analytics screenshot">
+            <div class="card-body">
+              <h5 class="card-title">Realtime Analytics</h5>
+              <p class="card-text">Streaming analytics pipeline for near-instant insights and anomaly detection across user events.</p>
+              <div class="tech meta-muted">Kafka · Flink · ClickHouse</div>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <small class="meta-muted">2022</small>
+              <a class="btn btn-sm btn-outline-primary" href="#" aria-label="Read more about Realtime Analytics">Details</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-4">
+          <a class="btn btn-primary" href="#contact">Discuss a project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Featured -->
+    <section id="blog" class="py-5">
+      <div class="container" style="max-width: var(--page-max-width);">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <h2 class="section-heading">From the blog</h2>
+            <p class="section-subtitle">Notes on building teams, designing APIs, and scaling systems.</p>
+
+            <article class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <div class="bg-featured-blog" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=c6b4f3b2a7f6e2d7a4c9f2b8e3f4a1e3'); border-radius: .375rem 0 0 .375rem;"></div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Designing APIs that scale</h5>
+                    <p class="card-text">Guidelines and patterns I've used to keep APIs predictable, evolvable, and fast at scale.</p>
+                    <p class="meta-muted mb-0">April 2024 · 8 min read</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Observability beyond metrics</h5>
+                <p class="card-text">How distributed tracing and structured logs improve troubleshooting and reduce MTTR.</p>
+                <p class="meta-muted mb-0">February 2024 · 6 min read</p>
+              </div>
+            </article>
+
+            <div class="mt-3">
+              <a class="btn btn-outline-primary" href="#">View all posts</a>
+            </div>
+          </div>
+
+          <aside class="col-lg-4">
+            <div class="card p-3 mb-3">
+              <h6 class="mb-2">Speaking & workshops</h6>
+              <p class="mb-0">Available for technical talks, workshops, and architecture reviews. Reach out to schedule a session.</p>
+            </div>
+
+            <div class="card p-3">
+              <h6 class="mb-2">Newsletter</h6>
+              <p class="mb-2">Short, practical notes on engineering leadership and system design. 1–2 emails/month.</p>
+              <form action="#" method="post" class="d-flex gap-2" onsubmit="event.preventDefault(); alert('Thanks — mock subscribe complete');">
+                <label for="newsletter-email" class="visually-hidden">Email</label>
+                <input id="newsletter-email" type="email" class="form-control" placeholder="you@company.com" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5 bg-white">
+      <div class="container" style="max-width: var(--page-max-width);">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <h2 class="section-heading">Let's build something</h2>
+            <p class="section-subtitle">I work with early-stage startups and established teams to design and deliver robust software. Describe your project and I'll get back within 48 hours.</p>
+
+            <ul class="list-unstyled">
+              <li class="mb-2"><strong>Email:</strong> <a href="mailto:hello@chiragdodiya.com">hello@chiragdodiya.com</a></li>
+              <li class="mb-2"><strong>Location:</strong> Remote — available globally</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card p-3">
+              <form action="#" method="post" onsubmit="event.preventDefault(); alert('Message sent — (mock).');">
+                <div class="mb-3">
+                  <label class="form-label" for="contact-name">Name</label>
+                  <input id="contact-name" class="form-control" type="text" placeholder="Your name" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="contact-email">Email</label>
+                  <input id="contact-email" class="form-control" type="email" placeholder="you@company.com" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="contact-message">Message</label>
+                  <textarea id="contact-message" class="form-control" rows="4" placeholder="Tell me about your project" required></textarea>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-outline-primary me-2" type="reset">Reset</button>
+                  <button class="btn btn-primary" type="submit">Send message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="max-width: var(--page-max-width);">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0 text-muted">© <span id="year"></span> Chirag Dodiya. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a class="me-3" href="#" aria-label="Twitter">Twitter</a>
+          <a class="me-3" href="#" aria-label="GitHub">GitHub</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A6fQYd2ZbLr2e3Jw5y4U0m1w5Jv1pka8m6q9Q+8Bq2j1d3a8Z4v6b9Y2c3m2b" crossorigin="anonymous"></script>
+
+  <!-- Small page scripts -->
+  <script>
+    // Set the footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enhance internal anchor navigation with smooth behavior fallback for older browsers
+    (function () {
+      if ('scrollBehavior' in document.documentElement.style) return;
+      // very small polyfill for smooth scroll on anchor clicks
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            var top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
