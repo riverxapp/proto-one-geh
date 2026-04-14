@@ -14,6 +14,39 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
         <!-- Core theme CSS -->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Portfolio preview enhancements (scoped) */
+            .portfolio-preview .project-card {
+                border: 0;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 1rem 2rem rgba(0,0,0,.08);
+                transition: transform .2s ease, box-shadow .2s ease;
+                height: 100%;
+            }
+            .portfolio-preview .project-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,.12);
+            }
+            .portfolio-preview .media-placeholder {
+                background: linear-gradient(135deg, #4f46e5, #22d3ee);
+                min-height: 160px;
+            }
+            .portfolio-preview .badge-skill {
+                background: rgba(15,23,42,.08);
+                color: #0f172a;
+                font-weight: 600;
+            }
+            .btn-gradient {
+                background: linear-gradient(135deg,#4f46e5,#22d3ee);
+                border: none;
+                color: #fff;
+            }
+            .btn-gradient:hover, .btn-gradient:focus {
+                color: #fff;
+                filter: brightness(.95);
+            }
+        </style>
     </head>
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
@@ -39,6 +72,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="portfolio.html">Portfolio (New)</a></li>
                                     <li><a class="dropdown-item" href="index.html#portfolio-overview">Portfolio Overview</a></li>
                                     <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
                                 </ul>
@@ -190,6 +224,81 @@
                     </ul>
                 </div>
             </section>
+
+            <!-- Portfolio Preview (promotes the new dedicated portfolio page) -->
+            <section class="py-5 bg-light portfolio-preview" id="portfolio-preview" aria-labelledby="portfolio-preview-heading">
+                <div class="container px-5">
+                    <div class="row align-items-end mb-4">
+                        <div class="col-lg-8">
+                            <h2 id="portfolio-preview-heading" class="fw-bolder section-heading mb-2">Explore the new Portfolio</h2>
+                            <p class="text-muted mb-0">Deep dives into platforms, APIs, and systems I’ve built—complete with architecture notes, metrics, and lessons learned.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                            <a class="btn btn-gradient btn-lg" href="portfolio.html" aria-label="Go to the full portfolio page">View Full Portfolio</a>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <article class="card project-card h-100">
+                                <div class="media-placeholder" role="img" aria-label="Project cover art placeholder"></div>
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold mb-2">Realtime Analytics Platform</h3>
+                                    <p class="text-muted mb-3">Stream processing with sub-second latency, autoscaling to millions of events/min.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge rounded-pill badge-skill">Node.js</span>
+                                        <span class="badge rounded-pill badge-skill">Kafka</span>
+                                        <span class="badge rounded-pill badge-skill">AWS</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pt-0 pb-4 ps-3">
+                                    <a class="stretched-link text-decoration-none" href="portfolio.html#realtime-analytics" aria-label="Open Realtime Analytics Platform in portfolio">
+                                        Learn more <i class="bi bi-arrow-right-short"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <article class="card project-card h-100">
+                                <div class="media-placeholder" role="img" aria-label="Project cover art placeholder"></div>
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold mb-2">Unified Developer Platform</h3>
+                                    <p class="text-muted mb-3">Self-service pipelines, templates, and SDKs improving DX and delivery speed.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge rounded-pill badge-skill">GraphQL</span>
+                                        <span class="badge rounded-pill badge-skill">Kubernetes</span>
+                                        <span class="badge rounded-pill badge-skill">CI/CD</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pt-0 pb-4 ps-3">
+                                    <a class="stretched-link text-decoration-none" href="portfolio.html#dev-platform" aria-label="Open Unified Developer Platform in portfolio">
+                                        Learn more <i class="bi bi-arrow-right-short"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <article class="card project-card h-100">
+                                <div class="media-placeholder" role="img" aria-label="Project cover art placeholder"></div>
+                                <div class="card-body">
+                                    <h3 class="h5 fw-bold mb-2">API Gateway & SDK Suite</h3>
+                                    <p class="text-muted mb-3">Versioned REST/GraphQL gateway with client SDKs and strong observability.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge rounded-pill badge-skill">REST</span>
+                                        <span class="badge rounded-pill badge-skill">OpenAPI</span>
+                                        <span class="badge rounded-pill badge-skill">Observability</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pt-0 pb-4 ps-3">
+                                    <a class="stretched-link text-decoration-none" href="portfolio.html#api-gateway" aria-label="Open API Gateway and SDK Suite in portfolio">
+                                        Learn more <i class="bi bi-arrow-right-short"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Resume Section -->
             <section class="py-5 text-center" aria-label="Resume download and contact">
                 <div class="container px-5">
